@@ -56,7 +56,7 @@ public class MainView extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Phan Thị Hồng Hạnh                   \n\nĐặng Mạnh Cường\n\nHà Minh Công \n\nNguyễn Đình Huỳnh\n\nNgô Văn Huy\n\nTrần Văn Lộc");
+        jTextArea1.setText("Phan Thị Hồng Hạnh                   \n\nĐMC\n\nHà Minh Công \n\nNguyễn Đình Huỳnh\n\nNgô Văn Huy\n\nTrần Văn Lộc");
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);

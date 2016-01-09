@@ -5,14 +5,9 @@
         <group>
             <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Controller/CheckAccount.java</file>
             <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Interface/MainView.java</file>
-            <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Bussiness/PhongBan.java</file>
-            <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Controller/Connect.java</file>
-            <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Bussiness/ChucVu.java</file>
-            <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Interface/QuanLiNhanVien.java</file>
             <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Interface/Login.java</file>
+            <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Interface/QuanLiNhanVien.java</file>
             <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Bussiness/NhanVien.java</file>
-            <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Controller/Main.java</file>
-            <file>file:/C:/Users/brucehuynh/Documents/NetBeansProjects/CNPM/src/Controller/LoadNhanVien.java</file>
         </group>
     </open-files>
 </project-private>

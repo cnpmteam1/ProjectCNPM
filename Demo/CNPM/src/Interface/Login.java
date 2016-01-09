@@ -122,11 +122,18 @@ public class Login extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(this, "Nhập vào mã người dùng");
         }
         else {
+           int t = 0 ;
+           try{
+               t = new Integer(usename.getText());
+           }catch(Exception e){
+             JOptionPane.showMessageDialog(this, "Ma người dùng không đúng định dạng");
+             return  ;
+           }
            if(password.equals("")){
              JOptionPane.showMessageDialog(this,"Nhập vào mã người dùng");
            }
            else {
-               if(CheckAccount.isValid(usename.getText(),password.getText())){
+               if(CheckAccount.isValid(t,password.getText())){
                    new MainView().show();
                    this.setVisible(false);
                   

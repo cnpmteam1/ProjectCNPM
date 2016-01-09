@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class CheckAccount {
     
-    public static boolean isValid(String id , String pass){
+    public static boolean isValid(int id , String pass){
         
         ArrayList<NhanVien> nhanvien = NhanVien.getAllNV();
         int i = 0 ;
@@ -22,7 +22,7 @@ public class CheckAccount {
            NhanVien nv = nhanvien.get(i);
            System.out.println(nv.getMaNV() +"," +  id);
            System.out.println(nv.getMatKhau()+ "," + pass);
-           if(nv.getMaNV().equals(id) && nv.getMatKhau().trim().equals(pass))
+           if(nv.getMaNV() == id && nv.getMatKhau().trim().equals(pass))
                return true ;
            
            i++ ;

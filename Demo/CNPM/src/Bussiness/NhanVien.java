@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
  * @author brucehuynh
  */
 public class NhanVien {
-    private String MaNV ;
+    private int MaNV ;
     private String TenNV ;
     private Date NgaySinh ;
     private String SDT ;
@@ -37,7 +37,7 @@ public class NhanVien {
 
     
     
-    public NhanVien(String MaNV, String TenNV, Date NgaySinh, String SDT, String SoCMT, String TrangThai, Date NgayBatDau, Date NgayKetThuc, String MatKhau, String GhiChu, String ChucVuID, String MaPhongID) {
+    public NhanVien(int MaNV, String TenNV, Date NgaySinh, String SDT, String SoCMT, String TrangThai, Date NgayBatDau, Date NgayKetThuc, String MatKhau, String GhiChu, String ChucVuID, String MaPhongID) {
         this.MaNV = MaNV;
         this.TenNV = TenNV;
         this.NgaySinh = NgaySinh;
@@ -59,11 +59,11 @@ public class NhanVien {
     }
     
     
-    public String getMaNV() {
+    public int getMaNV() {
         return MaNV;
     }
 
-    public void setMaNV(String MaNV) {
+    public void setMaNV(int MaNV) {
         this.MaNV = MaNV;
     }
 
@@ -165,14 +165,14 @@ public class NhanVien {
             String sql = null ;
             nhanvien = new ArrayList<NhanVien>();
             if(temp == 0) sql = "Select * from NhanVien where MaNhanVien like '" + key +"'" ;
-            else sql = "Select * from NhanVien where TenNhanVien like '" + key + "'" ;
-            
+            else if(temp == 1) sql = "Select * from NhanVien where TenNhanVien like '" + key + "'" ;
+            else if(temp == 2) sql = "Select * from NhanVien where ChungMinhThu like '" + key + "'" ;
             ResultSet rs = Connect.getSQL().createStatement().executeQuery(sql);
             
             while(rs.next()){
                 
                 NhanVien nv = new NhanVien();
-                nv.setMaNV(rs.getString(1));
+                nv.setMaNV(rs.getInt(1));
                 nv.setTenNV(rs.getNString(2));
                 nv.setNgaySinh(rs.getDate(3));
                 nv.setSDT(rs.getString(4));
@@ -198,21 +198,21 @@ public class NhanVien {
     
     public void InsertNV() throws ClassNotFoundException, SQLException {
      
-            String sql = "Insert into NhanVien values(?,?,?,?,?,?,?,?,?,?,?,?)" ;
+            String sql = "Insert into NhanVien(TenNhanVien,NgaySinh,SoDT,ChungMinhThu,GhiChu,TrangThai,NgayBatDau,NgayKetThuc,MatKhau,ChucVuID,MaPhongID) "
+                    + "values(?,?,?,?,?,?,?,?,?,?,?)" ;
             DateFormat fm = new SimpleDateFormat("MM/dd/yyyy");
             PreparedStatement ps = Connect.getSQL().prepareStatement(sql);
-            ps.setString(1,getMaNV());
-            ps.setString(2,getTenNV());
-            ps.setString(3, fm.format(getNgaySinh()));
-            ps.setString(4,getSDT());
-            ps.setString(5,getSoCMT());
-            ps.setString(6, getGhiChu());
-            ps.setString(7 , getTrangThai());
-            ps.setString(8, fm.format(getNgayBatDau()));
-            ps.setString(9, fm.format(getNgayKetThuc()));
-            ps.setString(10 ,getMatKhau());
-            ps.setString(11, getChucVuID());
-            ps.setString(12, getMaPhongID());
+            ps.setString(1,getTenNV());
+            ps.setString(2, fm.format(getNgaySinh()));
+            ps.setString(3,getSDT());
+            ps.setString(4,getSoCMT());
+            ps.setString(5, getGhiChu());
+            ps.setString(6 , getTrangThai());
+            ps.setString(7, fm.format(getNgayBatDau()));
+            ps.setString(8, fm.format(getNgayKetThuc()));
+            ps.setString(9 ,getMatKhau());
+            ps.setString(10, getChucVuID());
+            ps.setString(11, getMaPhongID());
             ps.execute();
        
     }
@@ -229,7 +229,7 @@ public class NhanVien {
             while(rs.next()){
                 
                 NhanVien nv = new NhanVien();
-                nv.setMaNV(rs.getString(1));
+                nv.setMaNV(rs.getInt(1));
                 nv.setTenNV(rs.getNString(2));
                 nv.setNgaySinh(rs.getDate(3));
                 nv.setSDT(rs.getString(4));
